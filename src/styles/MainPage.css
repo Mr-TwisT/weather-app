@@ -1,7 +1,7 @@
 .mainPage {
   width: 100%;
   margin-top: 6rem;
-  background-color: lightslategray;
+  /* background-color: lightslategray; */
 }
 
 .mainPage__welcomeText {
@@ -13,8 +13,18 @@
 
 .mainPage__form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 3rem;
+}
+
+.mainPage__cards {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+  gap: 3rem;
 }

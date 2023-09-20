@@ -1,0 +1,55 @@
+.weatherCard {
+  position: relative;
+  width: 100%;
+  margin: 20px 50px;
+  padding-bottom: 3rem;
+  border-radius: 20px;
+  background-color: lightslategray;
+}
+
+.weatherCard__icon {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  max-width: 75%;
+}
+
+.weatherCard__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.data__city {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.data__temp {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+  gap: 5px;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+/* dodać taką zakładkę */

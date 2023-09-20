@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import InputField from '../components/InputField';
+import WeatherCard from '../components/WeatherCard';
 
 import '../styles/MainPage.css';
 
@@ -27,7 +28,11 @@ const MainPage = () => {
           submit={handleSubmitForm}
         />
 
-        <div className="mainPage__cards"></div>
+        <div className="mainPage__cards">
+          <WeatherCard />
+          <WeatherCard />
+          <WeatherCard />
+        </div>
       </main>
     </div>
   );

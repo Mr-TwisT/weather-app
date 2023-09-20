@@ -38,3 +38,21 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+/* CSS VARIABLES */
+
+:root {
+  --color-primary: #1b262c;
+  --color-secondary: #24353e;
+  --color-accent: #00b4d8;
+
+  --color-text-primary: #caf0f8;
+  --color-text-secondary: #495057;
+
+  --color-blue-dark: rgba(2, 62, 138, 1);
+  --color-blue-medium: rgba(0, 119, 182, 1);
+  --color-blue-light: rgba(0, 150, 199, 1);
+
+  --color-white: #fff;
+  --color-black: #000;
+}

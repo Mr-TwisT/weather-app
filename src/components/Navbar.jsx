@@ -12,6 +12,9 @@ const Navbar = () => {
 
   const handleClickTheme = () => {
     setIsDark((prevState) => !prevState);
+
+    const app = document.querySelector('.app');
+    app.classList.toggle('dark');
   };
 
   return (

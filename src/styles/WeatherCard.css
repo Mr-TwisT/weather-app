@@ -1,18 +1,10 @@
 .weatherCard {
-  /* position: relative; */
   width: 100%;
   margin: 20px 50px;
   padding-bottom: 3rem;
   border-radius: 20px;
   background-color: lightslategray;
 }
-
-/* .weatherCard__icon {
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  max-width: 75%;
-} */
 
 .weatherCard__icon {
   margin: 1.5rem auto;
@@ -24,7 +16,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin-top: 8rem; */
+  margin-top: 2rem;
 }
 
 .mainInfo {
@@ -46,7 +38,7 @@
 .details {
   display: flex;
   flex-direction: column;
-  margin-top: 12px;
+  margin-top: 0.75rem;
   text-align: center;
   font-size: 1.2rem;
   font-weight: 500;

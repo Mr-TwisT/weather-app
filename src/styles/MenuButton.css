@@ -1,13 +1,13 @@
 .menuButton {
-  padding: 14px 28px;
-  border: 2px solid #1b262c;
-  border-radius: 16px;
-  color: #fff;
-  background: #1b262c;
+  padding: 0.9rem 1.8rem;
+  border: 2px solid var(--color-primary);
+  border-radius: 1rem;
+  color: var(--color-text);
+  background: var(--color-primary);
 }
 
 .menuButton:hover {
   cursor: pointer;
-  background: #24353e;
-  border-color: #24353e;
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
 }

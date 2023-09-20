@@ -16,17 +16,17 @@ const Navbar = () => {
 
   return (
     <nav className="navbar">
-      <div className="logo">
+      <div className="navbar__logo">
         <img src={logoIcon} alt="logo-icon" className="logoIcon" />
         <h2 className="logoName">Weather App</h2>
       </div>
-      <section className="menu">
+      <section className="navbar__menu">
         <MenuButton text="Home" click={() => {}} />
         <MenuButton text="Popular Cities" click={() => {}} />
         <MenuButton text="About Us" click={() => {}} />
       </section>
-      <div className="theme">
-        <button className="changeTheme" onClick={handleClickTheme}>
+      <div className="navbar__theme">
+        <button className="themeBtn" onClick={handleClickTheme}>
           {isDark ? (
             <FontAwesomeIcon icon={faSun} className="btnSun" />
           ) : (

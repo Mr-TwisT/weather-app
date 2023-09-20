@@ -39,6 +39,18 @@ const MainPage = () => {
     }
   };
 
+  // const currentWeather = weatherData.forecast.forecastday[0];
+  // const tomorrowWeather = weatherData.forecast.forecastday[1];
+  // const afterTomorrowWeather = weatherData.forecast.forecastday[2];
+
+  // const WeatherCards = () => {
+  //   if (weatherData.) {
+  //     for (let i = 0; i < 3; i++) {
+  //       return <WeatherCard data={weatherData?.forecast.forecastday[i]} />;
+  //     }
+  //   }
+  // };
+
   return (
     <div className="mainPage">
       <h3 className="mainPage__welcomeText">
@@ -55,9 +67,13 @@ const MainPage = () => {
         />
 
         <div className="mainPage__cards">
-          <WeatherCard />
-          <WeatherCard />
-          <WeatherCard />
+          {Object.keys(weatherData).length > 0 ? (
+            <>
+              <WeatherCard data={weatherData} i={0} />
+              <WeatherCard data={weatherData} i={1} />
+              <WeatherCard data={weatherData} i={2} />
+            </>
+          ) : null}
         </div>
       </main>
     </div>

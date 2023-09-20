@@ -22,7 +22,7 @@ const Navbar = () => {
       </div>
       <section className="navbar__menu">
         <MenuButton text="Home" click={() => {}} />
-        <MenuButton text="Popular Cities" click={() => {}} />
+        <MenuButton text="Your History" click={() => {}} />
         <MenuButton text="About Us" click={() => {}} />
       </section>
       <div className="navbar__theme">

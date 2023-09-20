@@ -1,0 +1,20 @@
+.mainPage {
+  width: 100%;
+  margin-top: 6rem;
+  background-color: lightslategray;
+}
+
+.mainPage__welcomeText {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+  padding: 12px 0;
+}
+
+.mainPage__form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}

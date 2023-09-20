@@ -16,6 +16,10 @@
   gap: 6px;
 }
 
+.logo:hover {
+  cursor: pointer;
+}
+
 .logoIcon {
   max-width: 100%;
   max-height: 100%;

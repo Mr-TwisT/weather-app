@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+.app {
+  width: 100vw;
+  min-height: 100vh;
+  color: #caf0f8;
+  font-family: Poppins;
+  background: linear-gradient(
+    310deg,
+    rgba(0, 150, 199, 1) 10%,
+    rgba(0, 119, 182, 1) 30%,
+    rgba(2, 62, 138, 1) 90%
+  );
+  padding: 2rem 3rem;
+}

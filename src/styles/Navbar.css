@@ -1,0 +1,65 @@
+.navbar {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 20%;
+  height: 100%;
+  max-width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.logoIcon {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.logoName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-right: 5rem;
+}
+
+.theme {
+  width: 50px;
+  height: 50px;
+}
+
+.changeTheme {
+  width: 100%;
+  height: 100%;
+  border: 2px solid #1b262c;
+  border-radius: 50%;
+  background: #1b262c;
+}
+
+.changeTheme:hover {
+  cursor: pointer;
+  background: #24353e;
+  border-color: #24353e;
+}
+
+.btnSun {
+  color: #fff;
+}
+
+.btnMoon {
+  color: #fff;
+}

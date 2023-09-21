@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { AppContext } from '../App';
 
 import InputField from '../components/InputField';
@@ -15,6 +15,8 @@ const MainPage = () => {
     storedData,
     setStoredData,
   } = useContext(AppContext);
+
+  const isMounted = useRef(false);
 
   const handleChangeInputText = (e) => setCity(e.target.value);
 
@@ -47,31 +49,30 @@ const MainPage = () => {
     }
   };
 
-  // const WeatherCards = () => {
-  //   if (weatherData.) {
-  //     for (let i = 0; i < 3; i++) {
-  //       return <WeatherCard data={weatherData?.forecast.forecastday[i]} />;
-  //     }
-  //   }
-  // };
-
   useEffect(() => {
-    if (Object.keys(weatherData).length > 0) {
-      setStoredData((prevState) => {
-        return [...prevState, weatherData.current];
-      });
-      localStorage.setItem('weatherItem', JSON.stringify(storedData));
+    if (isMounted.current) {
+      if (
+        Object.keys(weatherData).length > 0 &&
+        weatherData.current !== storedData[storedData.length - 1]
+      ) {
+        setStoredData((prevState) => {
+          return [...prevState, weatherData.current];
+        });
+        localStorage.setItem('weatherItem', JSON.stringify(storedData));
+      }
+    } else {
+      isMounted.current = true;
     }
   }, [weatherData]);
 
   return (
-    <div className="mainPage">
-      <h3 className="mainPage__welcomeText">
+    <div className='mainPage'>
+      <h3 className='mainPage__welcomeText'>
         Check the weather of the whole world
         <br />
-        with our <span className="gradient-color">Weather App</span> !
+        with our <span className='gradient-color'>Weather App</span> !
       </h3>
-      <main className="mainPage__form">
+      <main className='mainPage__form'>
         <InputField
           city={city}
           change={handleChangeInputText}
@@ -79,7 +80,7 @@ const MainPage = () => {
           clearInput={clearTextInput}
         />
 
-        <div className="mainPage__cards">
+        <div className='mainPage__cards'>
           {Object.keys(weatherData).length > 0 ? (
             <>
               <WeatherCard data={weatherData} i={0} />

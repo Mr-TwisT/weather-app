@@ -34,14 +34,14 @@ const App = () => {
         setStoredData,
       }}
     >
-      <div className="app">
+      <div className='app'>
         <Routes>
-          <Route path="/" element={<SharedLayout />}>
+          <Route path='/' element={<SharedLayout />}>
             <Route index element={<MainPage />} />
-            <Route path="history" element={<HistoryPage />} />
-            <Route path="about" element={<AboutPage />} />
+            <Route path='history' element={<HistoryPage />} />
+            <Route path='about' element={<AboutPage />} />
           </Route>
-          <Route path="*" element={<ErrorPage />} />
+          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </div>
     </AppContext.Provider>

@@ -1,2 +1,3 @@
 - upgrade kafelków żeby były ruchome
+- current pogoda z godziną
 - mobile view

@@ -21,24 +21,24 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar">
-      <div className="navbar__logo">
-        <Link to="/" className="logoLink">
-          <img src={logoIcon} alt="logo-icon" className="logoIcon" />
-          <h2 className="logoName">Weather App</h2>
+    <nav className='navbar'>
+      <div className='navbar__logo'>
+        <Link to='/' className='logoLink'>
+          <img src={logoIcon} alt='logo-icon' className='logoIcon' />
+          <h2 className='logoName'>Weather App</h2>
         </Link>
       </div>
-      <section className="navbar__menu">
-        <MenuButton text="Home" link="/" />
-        <MenuButton text="Your History" link="/history" />
-        <MenuButton text="About Us" link="/about" />
+      <section className='navbar__menu'>
+        <MenuButton text='Home' link='/' />
+        <MenuButton text='Your History' link='/history' />
+        <MenuButton text='About Us' link='/about' />
       </section>
-      <div className="navbar__theme">
-        <button className="themeBtn" onClick={handleClickTheme}>
+      <div className='navbar__theme'>
+        <button className='themeBtn' onClick={handleClickTheme}>
           {isDark ? (
-            <FontAwesomeIcon icon={faSun} className="btnSun" />
+            <FontAwesomeIcon icon={faSun} className='btnSun' />
           ) : (
-            <FontAwesomeIcon icon={faMoon} className="btnMoon" />
+            <FontAwesomeIcon icon={faMoon} className='btnMoon' />
           )}
         </button>
       </div>

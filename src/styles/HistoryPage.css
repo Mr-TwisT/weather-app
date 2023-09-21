@@ -1,0 +1,36 @@
+.historyPage {
+  width: 100%;
+  margin-top: 6rem;
+}
+
+.historyPage__headerText {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: 500;
+  padding: 0.75rem 0;
+}
+
+.historyPage__icon {
+  color: #ffde34;
+  margin-left: 1rem;
+  transform: scale(1.25) rotate(20deg);
+}
+
+.historyPage__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.infoText {
+}

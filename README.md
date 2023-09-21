@@ -1,1 +1,2 @@
 - upgrade kafelków żeby były ruchome
+- mobile view

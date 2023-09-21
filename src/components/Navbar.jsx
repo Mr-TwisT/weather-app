@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../App';
 
 import MenuButton from './MenuButton';
 import '../styles/Navbar.css';
@@ -10,7 +11,7 @@ import { faSun } from '@fortawesome/free-solid-svg-icons';
 import { faMoon } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = () => {
-  const [isDark, setIsDark] = useState(false);
+  const { isDark, setIsDark } = useContext(AppContext);
 
   const handleClickTheme = () => {
     setIsDark((prevState) => !prevState);

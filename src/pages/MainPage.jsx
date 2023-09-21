@@ -1,12 +1,20 @@
-import { useState } from 'react';
+import { useContext, useEffect } from 'react';
+import { AppContext } from '../App';
+
 import InputField from '../components/InputField';
 import WeatherCard from '../components/WeatherCard';
 
 import '../styles/MainPage.css';
 
 const MainPage = () => {
-  const [city, setCity] = useState('');
-  const [weatherData, setWeatherData] = useState({});
+  const {
+    city,
+    setCity,
+    weatherData,
+    setWeatherData,
+    storedData,
+    setStoredData,
+  } = useContext(AppContext);
 
   const handleChangeInputText = (e) => setCity(e.target.value);
 
@@ -39,10 +47,6 @@ const MainPage = () => {
     }
   };
 
-  // const currentWeather = weatherData.forecast.forecastday[0];
-  // const tomorrowWeather = weatherData.forecast.forecastday[1];
-  // const afterTomorrowWeather = weatherData.forecast.forecastday[2];
-
   // const WeatherCards = () => {
   //   if (weatherData.) {
   //     for (let i = 0; i < 3; i++) {
@@ -50,6 +54,14 @@ const MainPage = () => {
   //     }
   //   }
   // };
+
+  useEffect(() => {
+    if (Object.keys(weatherData).length > 0) {
+      storedData.push(weatherData.current);
+      localStorage.setItem('weatherItem', JSON.stringify(storedData));
+    }
+    console.log(storedData);
+  }, [weatherData]);
 
   return (
     <div className="mainPage">

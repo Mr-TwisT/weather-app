@@ -1,2 +1,1 @@
-- zmienić gradient na żółty
-- przezroczystosc kafelków
+- upgrade kafelków żeby były ruchome

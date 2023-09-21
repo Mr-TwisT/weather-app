@@ -1,4 +1,9 @@
 .menuButton {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.menuButton__btn {
   padding: 0.9rem 1.8rem;
   border: 2px solid var(--color-primary);
   border-radius: 1rem;
@@ -6,7 +11,7 @@
   background: var(--color-primary);
 }
 
-.menuButton:hover {
+.menuButton__btn:hover {
   cursor: pointer;
   background: var(--color-secondary);
   border-color: var(--color-secondary);

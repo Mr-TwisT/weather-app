@@ -1,12 +1,11 @@
+import { Link } from 'react-router-dom';
 import '../styles/MenuButton.css';
 
-const MenuButton = ({ text, click }) => {
+const MenuButton = ({ text, link }) => {
   return (
-    <>
-      <button className="menuButton" onClick={click}>
-        {text}
-      </button>
-    </>
+    <Link to={link} className="menuButton">
+      <button className="menuButton__btn">{text}</button>
+    </Link>
   );
 };
 

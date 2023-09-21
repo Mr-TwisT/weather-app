@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
 import MenuButton from './MenuButton';
 import '../styles/Navbar.css';
 
@@ -20,13 +22,15 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <img src={logoIcon} alt="logo-icon" className="logoIcon" />
-        <h2 className="logoName">Weather App</h2>
+        <Link to="/" className="logoLink">
+          <img src={logoIcon} alt="logo-icon" className="logoIcon" />
+          <h2 className="logoName">Weather App</h2>
+        </Link>
       </div>
       <section className="navbar__menu">
-        <MenuButton text="Home" click={() => {}} />
-        <MenuButton text="Your History" click={() => {}} />
-        <MenuButton text="About Us" click={() => {}} />
+        <MenuButton text="Home" link="/" />
+        <MenuButton text="Your History" link="/history" />
+        <MenuButton text="About Us" link="/about" />
       </section>
       <div className="navbar__theme">
         <button className="themeBtn" onClick={handleClickTheme}>

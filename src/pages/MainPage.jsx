@@ -57,10 +57,11 @@ const MainPage = () => {
 
   useEffect(() => {
     if (Object.keys(weatherData).length > 0) {
-      storedData.push(weatherData.current);
+      setStoredData((prevState) => {
+        return [...prevState, weatherData.current];
+      });
       localStorage.setItem('weatherItem', JSON.stringify(storedData));
     }
-    console.log(storedData);
   }, [weatherData]);
 
   return (

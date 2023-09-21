@@ -6,23 +6,12 @@ import { faHandPointDown } from '@fortawesome/free-solid-svg-icons';
 import '../styles/HistoryPage.css';
 
 const HistoryPage = () => {
-  const {} = useContext(AppContext);
+  const { weatherData } = useContext(AppContext);
+  let storedWeatherItem = [];
 
-  // const storedWeatherItem = JSON.parse(localStorage.getItem('weatherItem'));
-
-  // const [storedData, setStoredData] = useState(initStoredData);
-
-  // useEffect(() => {
-  //   setStoredData((prevState) => {
-  //     return {
-  //       ...prevState,
-  //       storedWeatherItem,
-  //     };
-  //   });
-  //   storedData.data.push(storedWeatherItem);
-  // }, []);
-
-  // console.log(storedData);
+  useEffect(() => {
+    storedWeatherItem = JSON.parse(localStorage.getItem('weatherItem'));
+  }, [weatherData]);
 
   return (
     <div className="historyPage">
@@ -32,7 +21,7 @@ const HistoryPage = () => {
       </h3>
       <section className="historyPage__info">
         <ul className="infoList">
-          <p className="infoText">asasss</p>
+          {/* <p className="infoText">{storedWeatherItem[0].cloud}</p> */}
           <p className="infoText">asasss</p>
           <p className="infoText">asasss</p>
           <p className="infoText">asasss</p>

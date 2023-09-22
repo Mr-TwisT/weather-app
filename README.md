@@ -1,3 +1,4 @@
 - upgrade kafelków żeby były ruchome
-- current pogoda z godziną
+- ponowne wyszukanie miasta
 - mobile view
+  3/4h

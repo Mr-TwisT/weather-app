@@ -15,6 +15,7 @@ const App = () => {
   const [isDark, setIsDark] = useState(false);
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState({});
+  const [currentWeatherData, setCurrentWeatherData] = useState({});
   const [storedData, setStoredData] = useState(() => {
     const saved = localStorage.getItem('weatherItem');
     const initialValue = JSON.parse(saved);
@@ -30,6 +31,8 @@ const App = () => {
         setCity,
         weatherData,
         setWeatherData,
+        currentWeatherData,
+        setCurrentWeatherData,
         storedData,
         setStoredData,
       }}

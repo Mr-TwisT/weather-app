@@ -19,7 +19,11 @@ const HistoryPage = () => {
           {storedData.length > 0
             ? storedData.map((weather, index) => (
                 <li key={index}>
-                  <p className='infoText'>{weather.cloud}</p>
+                  <p className='infoText'>
+                    {weather.location.name} |{' '}
+                    {weather.location.localtime.slice(0, 10)} |{' '}
+                    {weather.current.temp_c}°C | searched: {} times
+                  </p>
                 </li>
               ))
             : null}

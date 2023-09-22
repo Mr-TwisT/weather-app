@@ -11,7 +11,7 @@
 }
 
 .aboutPage__details {
-  width: 50%;
+  width: 60%;
   max-width: fit-content;
   display: flex;
   flex-direction: row;

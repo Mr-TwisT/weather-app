@@ -12,6 +12,8 @@ const MainPage = () => {
     setCity,
     weatherData,
     setWeatherData,
+    currentWeatherData,
+    setCurrentWeatherData,
     storedData,
     setStoredData,
   } = useContext(AppContext);
@@ -25,20 +27,17 @@ const MainPage = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
 
-    city && fetchData();
+    city && getData();
     clearTextInput();
   };
 
-  const fetchData = async () => {
-    const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
-    const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3&aqi=no&alerts=no`;
-
+  const fetchFunc = async (url, setState) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
       if (response.status === 200) {
         console.log('Successfully getted data!');
-        setWeatherData(data);
+        setState(data);
       } else if (data.error.code === 1006) {
         alert(data.error.message); //zrobić coś lepszego
       } else {
@@ -49,21 +48,30 @@ const MainPage = () => {
     }
   };
 
+  const getData = async () => {
+    const apiKey = process.env.REACT_APP_WEATHER_API_KEY;
+    const url1 = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3&aqi=no&alerts=no`;
+    const url2 = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
+
+    fetchFunc(url1, setWeatherData);
+    fetchFunc(url2, setCurrentWeatherData);
+  };
+
   useEffect(() => {
     if (isMounted.current) {
       if (
-        Object.keys(weatherData).length > 0 &&
-        weatherData.current !== storedData[storedData.length - 1]
+        Object.keys(currentWeatherData).length > 0 &&
+        currentWeatherData !== storedData[storedData.length - 1]
       ) {
         setStoredData((prevState) => {
-          return [...prevState, weatherData.current];
+          return [...prevState, currentWeatherData];
         });
         localStorage.setItem('weatherItem', JSON.stringify(storedData));
       }
     } else {
       isMounted.current = true;
     }
-  }, [weatherData]);
+  }, [currentWeatherData]);
 
   return (
     <div className='mainPage'>
@@ -83,7 +91,7 @@ const MainPage = () => {
         <div className='mainPage__cards'>
           {Object.keys(weatherData).length > 0 ? (
             <>
-              <WeatherCard data={weatherData} i={0} />
+              <WeatherCard currData={currentWeatherData} />
               <WeatherCard data={weatherData} i={1} />
               <WeatherCard data={weatherData} i={2} />
             </>

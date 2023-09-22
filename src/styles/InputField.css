@@ -2,7 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 60%;
+  width: 80%;
 }
 
 .form__input {
@@ -37,4 +37,19 @@
 .form__button:active {
   transform: scale(0.8);
   box-shadow: 0 0 5px var(--color-black);
+}
+
+@media (min-width: 800px) {
+  .form {
+    width: 60%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    width: 90%;
+  }
+  .form__button {
+    padding: 0 0.5rem;
+  }
 }

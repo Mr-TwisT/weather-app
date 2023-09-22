@@ -1,6 +1,6 @@
 .aboutPage {
-  width: 100%;
-  margin-top: 6rem;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .aboutPage__headerText {
@@ -11,7 +11,6 @@
 }
 
 .aboutPage__details {
-  width: 60%;
   max-width: fit-content;
   display: flex;
   flex-direction: row;
@@ -22,8 +21,8 @@
 }
 
 .details__img {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   max-width: 50%;
   max-height: 50%;
   object-fit: cover;
@@ -39,4 +38,37 @@
 .details__line {
   margin: 1.5rem 0;
   border: 1px solid var(--color-primary);
+}
+
+@media (min-width: 1100px) {
+  .aboutPage {
+    width: 70%;
+  }
+  .details__img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media (max-width: 850px) {
+  .aboutPage__details {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutPage__details {
+    margin-top: 1rem;
+  }
+  .details__img {
+    width: 175px;
+    height: 175px;
+  }
+}
+
+@media (max-width: 500px) {
+  .details__img {
+    width: 130px;
+    height: 130px;
+  }
 }

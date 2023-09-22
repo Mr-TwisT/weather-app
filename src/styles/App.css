@@ -11,7 +11,7 @@
     var(--color-blue-medium) 30%,
     var(--color-blue-dark) 90%
   );
-  padding: 2rem 3rem;
+  padding: 2rem 1.5rem;
 }
 
 .gradient-color {
@@ -40,4 +40,10 @@
 
   --color-white: #fff;
   --color-black: #000;
+}
+
+@media (min-width: 900px) {
+  .app {
+    padding: 2rem 3rem;
+  }
 }

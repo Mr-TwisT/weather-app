@@ -16,9 +16,12 @@ const App = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState({});
   const [currentWeatherData, setCurrentWeatherData] = useState({});
+  const [counterArray, setCounterArray] = useState(() => {
+    const initialValue = JSON.parse(localStorage.getItem('counter'));
+    return initialValue || [1];
+  });
   const [storedData, setStoredData] = useState(() => {
-    const saved = localStorage.getItem('weatherItem');
-    const initialValue = JSON.parse(saved);
+    const initialValue = JSON.parse(localStorage.getItem('weather'));
     return initialValue || [];
   });
 
@@ -33,6 +36,8 @@ const App = () => {
         setWeatherData,
         currentWeatherData,
         setCurrentWeatherData,
+        counterArray,
+        setCounterArray,
         storedData,
         setStoredData,
       }}

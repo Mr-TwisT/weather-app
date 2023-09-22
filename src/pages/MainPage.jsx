@@ -14,13 +14,15 @@ const MainPage = () => {
     setWeatherData,
     currentWeatherData,
     setCurrentWeatherData,
+    counterArray,
+    setCounterArray,
     storedData,
     setStoredData,
   } = useContext(AppContext);
 
   const isMounted = useRef(false);
 
-  const handleChangeInputText = (e) => setCity(e.target.value);
+  const handleChangeInputText = (e) => setCity(e.target.value.toUpperCase());
 
   const clearTextInput = () => setCity('');
 
@@ -28,23 +30,39 @@ const MainPage = () => {
     e.preventDefault();
 
     city && getData();
+    counterOfSearchedCities();
     clearTextInput();
   };
 
-  const fetchFunc = async (url, setState) => {
+  const counterOfSearchedCities = () => {
+    const storageItems = JSON.parse(localStorage.getItem('weather'));
+    let counter = 0;
+
+    if (storageItems.length > 0) {
+      const result = storageItems.filter(
+        (item) => item.location.name.toUpperCase() === city
+      );
+      if (result.length > 0) counter = result.length;
+      counter++;
+
+      setCounterArray((prevState) => [...prevState, counter]);
+    }
+  };
+
+  const fetchFunc = async (url, setState, info) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
       if (response.status === 200) {
-        console.log('Successfully getted data!');
+        console.log(`Successfully getted data! [${info}]`);
         setState(data);
       } else if (data.error.code === 1006) {
-        alert(data.error.message); //zrobić coś lepszego
+        alert(data.error.message + ` [${info}]`); //zrobić coś lepszego
       } else {
-        console.log('Server Error!', data.error.message);
+        console.log('Server Error!', data.error.message, ` [${info}]`);
       }
     } catch (error) {
-      console.log('Fetch Error!', error);
+      console.log('Fetch Error!', error, ` [${info}]`);
     }
   };
 
@@ -53,8 +71,8 @@ const MainPage = () => {
     const url1 = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=3&aqi=no&alerts=no`;
     const url2 = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}&aqi=no`;
 
-    fetchFunc(url1, setWeatherData);
-    fetchFunc(url2, setCurrentWeatherData);
+    fetchFunc(url1, setWeatherData, 'Fetch forecast weather');
+    fetchFunc(url2, setCurrentWeatherData, 'Fetch current weather');
   };
 
   useEffect(() => {
@@ -66,12 +84,19 @@ const MainPage = () => {
         setStoredData((prevState) => {
           return [...prevState, currentWeatherData];
         });
-        localStorage.setItem('weatherItem', JSON.stringify(storedData));
       }
     } else {
       isMounted.current = true;
     }
   }, [currentWeatherData]);
+
+  useEffect(() => {
+    localStorage.setItem('weather', JSON.stringify(storedData));
+  }, [storedData]);
+
+  useEffect(() => {
+    localStorage.setItem('counter', JSON.stringify(counterArray));
+  }, [counterArray]);
 
   return (
     <div className='mainPage'>

@@ -6,7 +6,7 @@ import { faHandPointDown } from '@fortawesome/free-solid-svg-icons';
 import '../styles/HistoryPage.css';
 
 const HistoryPage = () => {
-  const { storedData } = useContext(AppContext);
+  const { storedData, counterArray } = useContext(AppContext);
 
   return (
     <div className='historyPage'>
@@ -22,7 +22,8 @@ const HistoryPage = () => {
                   <p className='infoText'>
                     {weather.location.name} |{' '}
                     {weather.location.localtime.slice(0, 10)} |{' '}
-                    {weather.current.temp_c}°C | searched: {} times
+                    {weather.current.temp_c}°C | searched: {counterArray[index]}{' '}
+                    times
                   </p>
                 </li>
               ))

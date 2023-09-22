@@ -1,2 +1,2 @@
 - upgrade kafelków żeby były ruchome
-- ponowne wyszukanie miasta
+- errorPage

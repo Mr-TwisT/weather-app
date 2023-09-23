@@ -1,0 +1,22 @@
+.errorPage {
+  display: grid;
+  place-items: center;
+  margin-top: 20vh;
+  padding: 1rem;
+}
+
+.errorPage__headerText {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.errorPage__text {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin: 1.5rem 0 5rem 0;
+}
+
+.errorPage__icon {
+  margin-left: 1rem;
+}

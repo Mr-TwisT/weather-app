@@ -51,8 +51,8 @@ const App = () => {
             <Route index element={<MainPage />} />
             <Route path='history' element={<HistoryPage />} />
             <Route path='about' element={<AboutPage />} />
+            <Route path='*' element={<ErrorPage />} />
           </Route>
-          <Route path='*' element={<ErrorPage />} />
         </Routes>
       </div>
     </AppContext.Provider>

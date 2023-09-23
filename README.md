@@ -1,2 +1,0 @@
-- upgrade kafelków żeby były ruchome
-- errorPage

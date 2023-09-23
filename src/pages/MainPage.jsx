@@ -30,7 +30,7 @@ const MainPage = () => {
     e.preventDefault();
 
     city && getData();
-    counterOfSearchedCities();
+    city && counterOfSearchedCities();
     clearTextInput();
   };
 

@@ -12,7 +12,10 @@ import './styles/App.css';
 export const AppContext = createContext();
 
 const App = () => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    const initialValue = JSON.parse(localStorage.getItem('dark'));
+    return initialValue || false;
+  });
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState({});
   const [currentWeatherData, setCurrentWeatherData] = useState({});

@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../App';
 
@@ -17,8 +17,23 @@ const Navbar = () => {
     setIsDark((prevState) => !prevState);
 
     const app = document.querySelector('.app');
-    app.classList.toggle('dark');
+    if (isDark) {
+      app.classList.add('dark');
+    } else {
+      app.classList.remove('dark');
+    }
   };
+
+  useEffect(() => {
+    localStorage.setItem('dark', JSON.stringify(isDark));
+
+    const app = document.querySelector('.app');
+    if (isDark) {
+      app.classList.add('dark');
+    } else {
+      app.classList.remove('dark');
+    }
+  }, [isDark]);
 
   return (
     <nav className='navbar'>
